@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ProgramClass</class>
+ <widget class="QMainWindow" name="ProgramClass">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>792</width>
+    <height>602</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Program</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QPushButton" name="opcja2">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>100</y>
+      <width>281</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Usun zaznaczony obiekt</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="opcja3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>180</y>
+      <width>281</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Zapisz obiekty do pliku</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="opcja1">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>281</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Dodaj obiekt</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="opcja4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>260</y>
+      <width>281</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Wczytaj obiekty z pliku</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="opcja5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>340</y>
+      <width>281</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Opusc program</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="listaObiektow">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>20</y>
+      <width>221</width>
+      <height>271</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="listaDanych">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>20</y>
+      <width>221</width>
+      <height>271</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>300</y>
+      <width>256</width>
+      <height>192</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="opcja6">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>412</x>
+      <y>500</y>
+      <width>251</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Wyswietl obrazek obiektu</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>792</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="Program.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>opcja1</sender>
+   <signal>clicked()</signal>
+   <receiver>ProgramClass</receiver>
+   <slot>dodajObiekty()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>73</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>323</x>
+     <y>247</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>listaObiektow</sender>
+   <signal>itemPressed(QListWidgetItem*)</signal>
+   <receiver>ProgramClass</receiver>
+   <slot>wyswietlDane()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>420</x>
+     <y>195</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>395</x>
+     <y>300</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>listaObiektow</sender>
+   <signal>itemPressed(QListWidgetItem*)</signal>
+   <receiver>ProgramClass</receiver>
+   <slot>wlaczPrzycisk()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>420</x>
+     <y>195</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>395</x>
+     <y>300</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>opcja6</sender>
+   <signal>clicked()</signal>
+   <receiver>ProgramClass</receiver>
+   <slot>wyswietlObrazek()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>537</x>
+     <y>553</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>395</x>
+     <y>300</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>opcja2</sender>
+   <signal>clicked()</signal>
+   <receiver>ProgramClass</receiver>
+   <slot>usunObiekt()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>150</x>
+     <y>175</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>395</x>
+     <y>300</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>opcja3</sender>
+   <signal>clicked()</signal>
+   <receiver>ProgramClass</receiver>
+   <slot>zapisz()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>150</x>
+     <y>255</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>395</x>
+     <y>300</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>opcja4</sender>
+   <signal>clicked()</signal>
+   <receiver>ProgramClass</receiver>
+   <slot>wczytaj()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>150</x>
+     <y>335</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>395</x>
+     <y>300</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>opcja5</sender>
+   <signal>clicked()</signal>
+   <receiver>ProgramClass</receiver>
+   <slot>czyszczenieVectora()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>150</x>
+     <y>415</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>395</x>
+     <y>300</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>dodajObiekty()</slot>
+  <slot>wyswietlDane()</slot>
+  <slot>wlaczPrzycisk()</slot>
+  <slot>wyswietlObrazek()</slot>
+  <slot>usunObiekt()</slot>
+  <slot>zapisz()</slot>
+  <slot>wczytaj()</slot>
+  <slot>czyszczenieVectora()</slot>
+ </slots>
+</ui>
